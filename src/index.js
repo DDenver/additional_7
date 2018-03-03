@@ -93,9 +93,18 @@ module.exports = function solveSudoku(matrix){
   }
 
   if (checkMatrix(matrix)){
-    return matrix;
+    throw matrix;
   } else {matrix[i][j] = 0;}
 }
 
-return sudocuSolver(matrix);
+try {
+  anas = sudocuSolver(matrix);
+} catch (answer) {
+  return answer;  
+}
+
+
 };
+
+
+
